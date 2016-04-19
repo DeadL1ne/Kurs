@@ -1,0 +1,5 @@
+c:\users\user\documents\visual studio 2015\Projects\Entity\EntityKurs\bin\Debug\EntityKurs.dll
+c:\users\user\documents\visual studio 2015\Projects\Entity\EntityKurs\bin\Debug\EntityKurs.pdb
+c:\users\user\documents\visual studio 2015\Projects\Entity\EntityKurs\obj\Debug\EntityKurs.csprojResolveAssemblyReference.cache
+c:\users\user\documents\visual studio 2015\Projects\Entity\EntityKurs\obj\Debug\EntityKurs.dll
+c:\users\user\documents\visual studio 2015\Projects\Entity\EntityKurs\obj\Debug\EntityKurs.pdb

@@ -1,0 +1,11 @@
+c:\users\user\documents\visual studio 2015\Projects\SQLitekurs\SQLitekurs\bin\Debug\SQLitekurs.dll
+c:\users\user\documents\visual studio 2015\Projects\SQLitekurs\SQLitekurs\bin\Debug\SQLitekurs.pdb
+c:\users\user\documents\visual studio 2015\Projects\SQLitekurs\SQLitekurs\bin\Debug\ClassLibrary1.dll
+c:\users\user\documents\visual studio 2015\Projects\SQLitekurs\SQLitekurs\bin\Debug\System.Data.SQLite.dll
+c:\users\user\documents\visual studio 2015\Projects\SQLitekurs\SQLitekurs\bin\Debug\xNet.dll
+c:\users\user\documents\visual studio 2015\Projects\SQLitekurs\SQLitekurs\bin\Debug\ClassLibrary1.pdb
+c:\users\user\documents\visual studio 2015\Projects\SQLitekurs\SQLitekurs\obj\Debug\SQLitekurs.csprojResolveAssemblyReference.cache
+c:\users\user\documents\visual studio 2015\Projects\SQLitekurs\SQLitekurs\obj\Debug\SQLitekurs.dll
+c:\users\user\documents\visual studio 2015\Projects\SQLitekurs\SQLitekurs\obj\Debug\SQLitekurs.pdb
+C:\Users\User\Documents\Visual Studio 2015\Projects\SQLitekurs\SQLitekurs\bin\Debug\EntityKurs.dll
+C:\Users\User\Documents\Visual Studio 2015\Projects\SQLitekurs\SQLitekurs\bin\Debug\EntityKurs.pdb
