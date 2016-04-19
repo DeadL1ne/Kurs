@@ -90,6 +90,10 @@
     <Compile Include="AddEstateObjectForm.Designer.cs">
       <DependentUpon>AddEstateObjectForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddRequest.Designer.cs" />
     <Compile Include="EstateBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,11 +114,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RequestForm.Designer.cs" />
     <Compile Include="SQLite.cs" />
     <Compile Include="SQLiteAsync.cs" />
     <EmbeddedResource Include="AddEstateObjectForm.resx">
       <DependentUpon>AddEstateObjectForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddRequest.resx" />
     <EmbeddedResource Include="EstateBase.resx">
       <DependentUpon>EstateBase.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,6 +142,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RequestForm.resx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -56,6 +56,12 @@ namespace RealtorEstateAgancy
             EstateObjectFrame estateObjectForm = new EstateObjectFrame();
             estateObjectForm.Show();
         }
+
+        private void btnRequest_Click(object sender, EventArgs e)
+        {
+            RequestForm requestForm = new RequestForm();
+            requestForm.Show();
+        }
     }
 }
     
