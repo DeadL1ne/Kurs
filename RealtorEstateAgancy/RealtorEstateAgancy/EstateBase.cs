@@ -13,11 +13,18 @@ using System.Data.SQLite;
 
 namespace RealtorEstateAgancy
 {
+    public delegate int estateId();
     public partial class EstateObjectFrame : Form
     {
         public EstateObjectFrame()
         {
             InitializeComponent();
+        }
+
+        int GetId()
+        {
+            int id;
+            return id = Convert.ToInt32(dgvEstateObjects.CurrentRow.Cells[0].Value);
         }
 
         SQLitekurs.SQLite db = new SQLitekurs.SQLite();
@@ -78,8 +85,8 @@ namespace RealtorEstateAgancy
 
         private void dgvEstateObjects_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            FullDescriptionForm descForm = new FullDescriptionForm();
-            descForm.Show();
+            FullDescriptionForm descForm = new FullDescriptionForm(new estateId(GetId));
+            descForm.ShowDialog();
         }
 
         //private void writeDgv_DoWork(object sender, DoWorkEventArgs e)

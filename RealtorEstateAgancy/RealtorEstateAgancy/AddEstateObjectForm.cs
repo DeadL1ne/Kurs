@@ -42,5 +42,10 @@ namespace RealtorEstateAgancy
             Close();
 
         }
+
+        private void AddEstateObjectForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

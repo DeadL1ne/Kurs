@@ -63,6 +63,7 @@
             // 
             // dealTypeComboBox
             // 
+            this.dealTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dealTypeComboBox.FormattingEnabled = true;
             this.dealTypeComboBox.Items.AddRange(new object[] {
             "Продажа",
@@ -85,6 +86,7 @@
             // 
             // localityComboBox
             // 
+            this.localityComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.localityComboBox.FormattingEnabled = true;
             this.localityComboBox.Items.AddRange(new object[] {
             "р-н. Ленинский",
@@ -139,6 +141,7 @@
             // 
             // roomNumberComboBox
             // 
+            this.roomNumberComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.roomNumberComboBox.FormattingEnabled = true;
             this.roomNumberComboBox.Items.AddRange(new object[] {
             "1",
@@ -281,6 +284,7 @@
             this.Controls.Add(this.dealTypeLabel);
             this.Name = "AddEstateObjectForm";
             this.Text = "Добавление объекта недвижимости";
+            this.Load += new System.EventHandler(this.AddEstateObjectForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

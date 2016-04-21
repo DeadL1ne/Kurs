@@ -26,3 +26,30 @@ C:\Users\User\documents\visual studio 2015\Projects\RealtorEstateAgancy\RealtorE
 C:\Users\User\documents\visual studio 2015\Projects\RealtorEstateAgancy\RealtorEstateAgancy\obj\Debug\RealtorEstateAgancy.AddEstateObjectForm.resources
 C:\Users\User\documents\visual studio 2015\Projects\RealtorEstateAgancy\RealtorEstateAgancy\obj\Debug\RealtorEstateAgancy.csprojResolveAssemblyReference.cache
 C:\Users\User\documents\visual studio 2015\Projects\RealtorEstateAgancy\RealtorEstateAgancy\obj\Debug\RealtorEstateAgancy.FullDescriptionForm.resources
+C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\bin\Debug\RealtorEstateAgancy.exe.config
+C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\obj\Debug\RealtorEstateAgancy.exe
+C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\obj\Debug\RealtorEstateAgancy.pdb
+C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\bin\Debug\RealtorEstateAgancy.exe
+C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\bin\Debug\RealtorEstateAgancy.pdb
+C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\bin\Debug\ClassLibrary1.dll
+C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\bin\Debug\EntityFramework.dll
+C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\bin\Debug\EntityFramework.SqlServer.dll
+C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\bin\Debug\EntityKurs.dll
+C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\bin\Debug\SQLitekurs.dll
+C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\bin\Debug\System.Data.SQLite.dll
+C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\bin\Debug\System.Data.SQLite.EF6.dll
+C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\bin\Debug\System.Data.SQLite.Linq.dll
+C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\bin\Debug\ClassLibrary1.pdb
+C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\bin\Debug\EntityFramework.xml
+C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\bin\Debug\EntityFramework.SqlServer.xml
+C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\bin\Debug\EntityKurs.pdb
+C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\bin\Debug\SQLitekurs.pdb
+C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\bin\Debug\System.Data.SQLite.xml
+C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\obj\Debug\RealtorEstateAgancy.csprojResolveAssemblyReference.cache
+C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\obj\Debug\RealtorEstateAgancy.csproj.RealtorEstateAgancy.exe.config
+C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\obj\Debug\RealtorEstateAgancy.AddEstateObjectForm.resources
+C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\obj\Debug\RealtorEstateAgancy.EstateObjectFrame.resources
+C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\obj\Debug\RealtorEstateAgancy.MainFrame.resources
+C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\obj\Debug\RealtorEstateAgancy.Properties.Resources.resources
+C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\obj\Debug\RealtorEstateAgancy.csproj.GenerateResource.Cache
+C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\obj\Debug\RealtorEstateAgancy.FullDescriptionForm.resources
