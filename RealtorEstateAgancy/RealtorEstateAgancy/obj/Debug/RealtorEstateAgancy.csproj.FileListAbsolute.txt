@@ -45,7 +45,6 @@ C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\bin\Debug\EntityFramewo
 C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\bin\Debug\EntityKurs.pdb
 C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\bin\Debug\SQLitekurs.pdb
 C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\bin\Debug\System.Data.SQLite.xml
-C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\obj\Debug\RealtorEstateAgancy.csprojResolveAssemblyReference.cache
 C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\obj\Debug\RealtorEstateAgancy.csproj.RealtorEstateAgancy.exe.config
 C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\obj\Debug\RealtorEstateAgancy.AddEstateObjectForm.resources
 C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\obj\Debug\RealtorEstateAgancy.EstateObjectFrame.resources
@@ -53,3 +52,5 @@ C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\obj\Debug\RealtorEstate
 C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\obj\Debug\RealtorEstateAgancy.Properties.Resources.resources
 C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\obj\Debug\RealtorEstateAgancy.csproj.GenerateResource.Cache
 C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\obj\Debug\RealtorEstateAgancy.FullDescriptionForm.resources
+C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\obj\Debug\RealtorEstateAgancy.AddRequest.resources
+C:\GitRepository\RealtorEstateAgancy\RealtorEstateAgancy\obj\Debug\RealtorEstateAgancy.RequestForm.resources
