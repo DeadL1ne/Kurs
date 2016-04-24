@@ -30,6 +30,7 @@
         {
             this.btnEstate = new System.Windows.Forms.Button();
             this.btnRequest = new System.Windows.Forms.Button();
+            this.btnCustomer = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnEstate
@@ -53,11 +54,22 @@
             this.btnRequest.UseVisualStyleBackColor = true;
             this.btnRequest.Click += new System.EventHandler(this.btnRequest_Click);
             // 
+            // btnCustomer
+            // 
+            this.btnCustomer.Location = new System.Drawing.Point(176, 104);
+            this.btnCustomer.Name = "btnCustomer";
+            this.btnCustomer.Size = new System.Drawing.Size(96, 23);
+            this.btnCustomer.TabIndex = 2;
+            this.btnCustomer.Text = "Клиенты";
+            this.btnCustomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnCustomer.UseVisualStyleBackColor = true;
+            // 
             // MainFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.btnCustomer);
             this.Controls.Add(this.btnRequest);
             this.Controls.Add(this.btnEstate);
             this.Name = "MainFrame";
@@ -71,6 +83,7 @@
 
         private System.Windows.Forms.Button btnEstate;
         private System.Windows.Forms.Button btnRequest;
+        private System.Windows.Forms.Button btnCustomer;
     }
 }
 

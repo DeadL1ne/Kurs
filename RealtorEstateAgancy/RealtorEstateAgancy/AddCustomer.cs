@@ -10,22 +10,21 @@ using System.Windows.Forms;
 
 namespace RealtorEstateAgancy
 {
-    public partial class RequestForm : Form
+    public partial class AddCustomer : Form
     {
-        public RequestForm()
+        public AddCustomer()
         {
             InitializeComponent();
         }
 
-        private void RequestForm_Load(object sender, EventArgs e)
+        private void addBtn_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void cancelBtn_Click(object sender, EventArgs e)
         {
-            AddRequest addRequest = new AddRequest();
-            addRequest.Show();
+            
         }
     }
 }

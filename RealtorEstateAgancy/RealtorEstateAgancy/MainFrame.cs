@@ -59,7 +59,7 @@ namespace RealtorEstateAgancy
 
         private void btnRequest_Click(object sender, EventArgs e)
         {
-            RequestForm requestForm = new RequestForm();
+            Requests requestForm = new Requests();
             requestForm.Show();
         }
     }
