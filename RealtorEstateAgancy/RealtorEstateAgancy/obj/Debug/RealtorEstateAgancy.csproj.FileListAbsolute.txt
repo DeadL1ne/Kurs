@@ -26,3 +26,6 @@ C:\Users\User\documents\visual studio 2015\Projects\RealtorEstateAgancy\RealtorE
 C:\Users\User\documents\visual studio 2015\Projects\RealtorEstateAgancy\RealtorEstateAgancy\obj\Debug\RealtorEstateAgancy.AddEstateObjectForm.resources
 C:\Users\User\documents\visual studio 2015\Projects\RealtorEstateAgancy\RealtorEstateAgancy\obj\Debug\RealtorEstateAgancy.csprojResolveAssemblyReference.cache
 C:\Users\User\documents\visual studio 2015\Projects\RealtorEstateAgancy\RealtorEstateAgancy\obj\Debug\RealtorEstateAgancy.FullDescriptionForm.resources
+C:\Users\vl\Source\Repos\Kurs\RealtorEstateAgancy\RealtorEstateAgancy\bin\Debug\RealtorEstateAgancy.exe.config
+C:\Users\vl\Source\Repos\Kurs\RealtorEstateAgancy\RealtorEstateAgancy\obj\Debug\RealtorEstateAgancy.exe
+C:\Users\vl\Source\Repos\Kurs\RealtorEstateAgancy\RealtorEstateAgancy\obj\Debug\RealtorEstateAgancy.pdb
