@@ -140,6 +140,10 @@ namespace SQLitekurs
             connection.Close();
             return allData;
         }
+        /// <summary>
+        /// Method for adding user's estate object in database.
+        /// </summary>
+        /// <param name="newEstate">Exemplar of EstateObject entity</param>
         public void AddEstate(EstateObject newEstate)
         {
             Connect(@"C:\BD\RealtorEstateAgancy.sqlite");
@@ -158,6 +162,15 @@ namespace SQLitekurs
                 "'" + newEstate.description + "');", connection);
             command.ExecuteNonQuery();
             connection.Close();
+        }
+
+        public string GetDealType()
+        {
+            string dealType;
+            Connect(@"C:\BD\RealtorEstateAgancy.sqlite");
+            connection.Open();
+            command = new SQLiteCommand("select (dealType) from EstateObject")
+
         }
         public void Change()
         { }

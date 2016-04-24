@@ -12,9 +12,16 @@ namespace RealtorEstateAgancy
 {
     public partial class FullDescriptionForm : Form
     {
-        public FullDescriptionForm()
+        private estateId id;
+        public FullDescriptionForm(estateId sender)
         {
             InitializeComponent();
+            id = sender;
+        }
+        private void FullDescriptionForm_Load(object sender, EventArgs e)
+        {
+
+            dealTypeLabel.Text = Convert.ToString(id.Invoke());
         }
     }
 }
