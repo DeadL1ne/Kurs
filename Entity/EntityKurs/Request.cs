@@ -49,6 +49,7 @@ namespace EntityKurs
             this.status = status;
 
         }
+        public Request() { }
 
     }
 }

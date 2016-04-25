@@ -23,5 +23,6 @@ namespace EntityKurs
             this.email = email;
             this.telephoneNumber = telephoneNumber;
         }
+        public Customer() { }
     }
 }
