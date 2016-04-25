@@ -163,15 +163,26 @@ namespace SQLitekurs
             command.ExecuteNonQuery();
             connection.Close();
         }
-
-        public string GetDealType()
+        public void AddCustomer(Customer customer)
         {
-            string dealType;
             Connect(@"C:\BD\RealtorEstateAgancy.sqlite");
             connection.Open();
-            command = new SQLiteCommand("select (dealType) from EstateObject")
-
+            command = new SQLiteCommand("insert into Customer(fio, email, telephoneNumber) values ("
+                + "'" + customer.fio + "'" +
+                 "'" + customer.email + "'" +
+                  "'" + customer.telephoneNumber);
+            command.ExecuteNonQuery();
+            connection.Close();
         }
+        //Павел, я не знаю что это, но мне нужно было собрать проект, поэтому я закомментировал
+        //public string GetDealType()
+        //{
+        //    string dealType;
+        //    Connect(@"C:\BD\RealtorEstateAgancy.sqlite");
+        //    connection.Open();
+        //    command = new SQLiteCommand("select (dealType) from EstateObject")
+
+        //}
         public void Change()
         { }
     }

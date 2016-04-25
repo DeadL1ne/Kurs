@@ -19,3 +19,13 @@ C:\GitRepository\SQLitekurs\SQLitekurs\bin\Debug\EntityKurs.dll
 C:\GitRepository\SQLitekurs\SQLitekurs\bin\Debug\xNet.dll
 C:\GitRepository\SQLitekurs\SQLitekurs\bin\Debug\ClassLibrary1.pdb
 C:\GitRepository\SQLitekurs\SQLitekurs\bin\Debug\EntityKurs.pdb
+C:\Users\vl\Source\Repos\Kurs\SQLitekurs\SQLitekurs\obj\Debug\SQLitekurs.csprojResolveAssemblyReference.cache
+C:\Users\vl\Source\Repos\Kurs\SQLitekurs\SQLitekurs\obj\Debug\SQLitekurs.dll
+C:\Users\vl\Source\Repos\Kurs\SQLitekurs\SQLitekurs\obj\Debug\SQLitekurs.pdb
+C:\Users\vl\Source\Repos\Kurs\SQLitekurs\SQLitekurs\bin\Debug\SQLitekurs.dll
+C:\Users\vl\Source\Repos\Kurs\SQLitekurs\SQLitekurs\bin\Debug\SQLitekurs.pdb
+C:\Users\vl\Source\Repos\Kurs\SQLitekurs\SQLitekurs\bin\Debug\ClassLibrary1.dll
+C:\Users\vl\Source\Repos\Kurs\SQLitekurs\SQLitekurs\bin\Debug\EntityKurs.dll
+C:\Users\vl\Source\Repos\Kurs\SQLitekurs\SQLitekurs\bin\Debug\xNet.dll
+C:\Users\vl\Source\Repos\Kurs\SQLitekurs\SQLitekurs\bin\Debug\ClassLibrary1.pdb
+C:\Users\vl\Source\Repos\Kurs\SQLitekurs\SQLitekurs\bin\Debug\EntityKurs.pdb

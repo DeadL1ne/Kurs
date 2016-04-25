@@ -24,7 +24,7 @@ namespace RealtorEstateAgancy
             if (FIO_textbox.Text != "" && (e_mail_textbox.Text != "" || phone_textbox.Text != ""))
              {
                 Customer customer = new Customer();
-
+                customer.
              }
         }
 
