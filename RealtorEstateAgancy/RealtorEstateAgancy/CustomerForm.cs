@@ -24,7 +24,8 @@ namespace RealtorEstateAgancy
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            AddCustomer addCustomerForm = new AddCustomer();
+            addCustomerForm.Show();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)

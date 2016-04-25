@@ -24,7 +24,12 @@ namespace RealtorEstateAgancy
             if (FIO_textbox.Text != "" && (e_mail_textbox.Text != "" || phone_textbox.Text != ""))
              {
                 Customer customer = new Customer();
-                customer.
+                customer.fio = FIO_textbox.Text;
+                customer.email = e_mail_textbox.Text;
+                customer.telephoneNumber = phone_textbox.Text;
+                SQLitekurs.SQLite db = new SQLitekurs.SQLite();
+                db.AddCustomer(customer);
+                Close();
              }
         }
 

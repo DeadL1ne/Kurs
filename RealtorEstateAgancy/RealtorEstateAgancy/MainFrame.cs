@@ -62,6 +62,12 @@ namespace RealtorEstateAgancy
             Requests requestForm = new Requests();
             requestForm.Show();
         }
+
+        private void btnCustomer_Click(object sender, EventArgs e)
+        {
+            CustomerForm customerForm = new CustomerForm();
+            customerForm.Show();
+        }
     }
 }
     

@@ -63,6 +63,7 @@
             this.btnCustomer.Text = "Клиенты";
             this.btnCustomer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCustomer.UseVisualStyleBackColor = true;
+            this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
             // 
             // MainFrame
             // 

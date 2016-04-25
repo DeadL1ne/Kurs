@@ -168,9 +168,9 @@ namespace SQLitekurs
             Connect(@"C:\BD\RealtorEstateAgancy.sqlite");
             connection.Open();
             command = new SQLiteCommand("insert into Customer(fio, email, telephoneNumber) values ("
-                + "'" + customer.fio + "'" +
-                 "'" + customer.email + "'" +
-                  "'" + customer.telephoneNumber);
+                + "'" + customer.fio + "'," +
+                 "'" + customer.email + "'," +
+                  "'" + customer.telephoneNumber + "');", connection);
             command.ExecuteNonQuery();
             connection.Close();
         }
