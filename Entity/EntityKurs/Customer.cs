@@ -11,10 +11,10 @@ namespace EntityKurs
     /// </summary>
     public class Customer
     {
-        private int id { get; set; }//primary key
-        private string fio { get; set; }
-        private string email { get; set; }
-        private string telephoneNumber { get; set; }
+        public int id { get; set; }//primary key
+        public string fio { get; set; }
+        public string email { get; set; }
+        public string telephoneNumber { get; set; }
 
         public Customer(int id, string fio, string email, string telephoneNumber)
         {
