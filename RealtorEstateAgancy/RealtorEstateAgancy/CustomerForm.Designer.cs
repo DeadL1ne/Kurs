@@ -34,6 +34,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dgvEstateObjects = new System.Windows.Forms.DataGridView();
+            this.btnAddRequest = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstateObjects)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,11 +96,22 @@
             this.dgvEstateObjects.Size = new System.Drawing.Size(898, 464);
             this.dgvEstateObjects.TabIndex = 13;
             // 
+            // btnAddRequest
+            // 
+            this.btnAddRequest.Location = new System.Drawing.Point(916, 464);
+            this.btnAddRequest.Name = "btnAddRequest";
+            this.btnAddRequest.Size = new System.Drawing.Size(75, 39);
+            this.btnAddRequest.TabIndex = 19;
+            this.btnAddRequest.Text = "Добавить заявку";
+            this.btnAddRequest.UseVisualStyleBackColor = true;
+            this.btnAddRequest.Click += new System.EventHandler(this.btnAddRequest_Click);
+            // 
             // CustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 515);
+            this.Controls.Add(this.btnAddRequest);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.tbSearch);
             this.Controls.Add(this.btnRemove);
@@ -108,6 +120,7 @@
             this.Controls.Add(this.dgvEstateObjects);
             this.Name = "CustomerForm";
             this.Text = "CustomerForm";
+            this.Load += new System.EventHandler(this.CustomerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEstateObjects)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -122,5 +135,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridView dgvEstateObjects;
+        private System.Windows.Forms.Button btnAddRequest;
     }
 }

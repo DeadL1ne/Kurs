@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
 
 namespace EntityKurs
 {
@@ -11,11 +12,17 @@ namespace EntityKurs
     /// </summary>
     public class Realtor
     {
-        private int id { get; set; }//primary key
-        private string fio { get; set; }
-        private string login { get; set; }
-        private string password { get; set; }
-        private string telephoneNumber { get; set; }
+        public int id { get; set; }//primary key
+        public string fio { get; set; }
+        public string login { get; set; }
+        public string password {
+            get { return password; }
+            set {
+                MD5 md5 = MD5.Create();
+                password = Convert.ToString(md5.ComputeHash(Encoding.UTF8.GetBytes(value)));
+            }
+        }
+        public string telephoneNumber { get; set; }
 
         public Realtor(int id, string fio, string login, string password, string telephoneNumber)
         {

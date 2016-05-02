@@ -5,8 +5,11 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
+using System.IO;
 using System.Windows.Forms;
+using SQLitekurs;
+using System.Data.SQLite;
 
 namespace RealtorEstateAgancy
 {
@@ -15,8 +18,9 @@ namespace RealtorEstateAgancy
         public CustomerForm()
         {
             InitializeComponent();
-        }
 
+        }
+        SQLitekurs.SQLite db = new SQLitekurs.SQLite();
         private void btnSearch_Click(object sender, EventArgs e)
         {
 
@@ -35,7 +39,38 @@ namespace RealtorEstateAgancy
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            UpdateDataGrid();
+        }
 
+        private void btnAddRequest_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CustomerForm_Load(object sender, EventArgs e)
+        {
+            string path = @"C:\BD\RealtorEstateAgancy.sqlite";
+            db.Connect(@"C:\BD\RealtorEstateAgancy.sqlite");
+            if (!File.Exists(path))
+            {
+                OpenFileDialog fileDialog = new OpenFileDialog();
+                fileDialog.InitialDirectory = "C:\\";
+                fileDialog.Filter = "SQLite files (*.sqlite)|*.sqlite|All files (*.*)|*.*";
+                fileDialog.FilterIndex = 1;
+                fileDialog.RestoreDirectory = true;
+                fileDialog.CheckFileExists = true;
+                fileDialog.Title = "Выберите файл с БД";
+                path = fileDialog.DereferenceLinks + fileDialog.FileName;
+                if (fileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    db.Connect(path);
+                }
+            }
+            UpdateDataGrid();
+        }
+        private void UpdateDataGrid()
+        {
+            dgvEstateObjects.DataSource = db.DisplayAllDataCustomer();
         }
     }
 }

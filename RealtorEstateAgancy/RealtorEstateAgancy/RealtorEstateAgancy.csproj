@@ -96,6 +96,12 @@
     <Compile Include="AddEstateObjectForm.Designer.cs">
       <DependentUpon>AddEstateObjectForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddRequest.Designer.cs">
+      <DependentUpon>AddRequest.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -108,6 +108,39 @@ namespace SQLitekurs
             connection.Close();
         }
         /// <summary>
+        /// Method removes record in database.
+        /// </summary>
+        /// <param name="id">id for removing</param>
+        public void RemoveCustomer(int id)
+        {
+            connection.Open();
+            command = new SQLiteCommand("delete from Customer where id =" + id, connection);
+            command.ExecuteNonQuery();
+            connection.Close();
+        }
+        /// <summary>
+        /// Method removes record in database.
+        /// </summary>
+        /// <param name="id">id for removing</param>
+        public void RemoveRequest(int id)
+        {
+            connection.Open();
+            command = new SQLiteCommand("delete from Request where id =" + id, connection);
+            command.ExecuteNonQuery();
+            connection.Close();
+        }
+        /// <summary>
+        /// Method removes record in database.
+        /// </summary>
+        /// <param name="id">id for removing</param>
+        public void RemoveRealtor(int id)
+        {
+            connection.Open();
+            command = new SQLiteCommand("delete from Realtor where id =" + id, connection);
+            command.ExecuteNonQuery();
+            connection.Close();
+        }
+        /// <summary>
         /// Method searches estateObjects which satisfy given address
         /// </summary>
         /// <param name="address">address to which the search is carried out</param>
@@ -133,6 +166,38 @@ namespace SQLitekurs
             connection.Open();
             command = new SQLiteCommand(connection);
             command.CommandText = @"SELECT id, dealType, locality, address, roomNumber, price FROM EstateObject;";
+            SQLiteDataReader allDataReader = command.ExecuteReader();
+            DataTable allData = new DataTable();
+            allData.Load(allDataReader);
+            allDataReader.Close();
+            connection.Close();
+            return allData;
+        }
+        /// <summary>
+        /// Method write all data in DataTable
+        /// </summary>
+        /// <returns>DataTable with all data.</returns>
+        public DataTable DisplayAllDataCustomer()
+        {
+            connection.Open();
+            command = new SQLiteCommand(connection);
+            command.CommandText = @"SELECT fio, email, telephoneNumber FROM Customer;";
+            SQLiteDataReader allDataReader = command.ExecuteReader();
+            DataTable allData = new DataTable();
+            allData.Load(allDataReader);
+            allDataReader.Close();
+            connection.Close();
+            return allData;
+        }
+        /// <summary>
+        /// Method write all data in DataTable
+        /// </summary>
+        /// <returns>DataTable with all data.</returns>
+        public DataTable DisplayAllDataRequest()
+        {
+            connection.Open();
+            command = new SQLiteCommand(connection);
+            command.CommandText = @"SELECT id, customerId, date, dealType, estateObject, material, lpice, uPrice, locality, lArea, uAea, roomNumber, floor, maxFloor, suggestion, status FROM Customer;";
             SQLiteDataReader allDataReader = command.ExecuteReader();
             DataTable allData = new DataTable();
             allData.Load(allDataReader);
@@ -168,9 +233,46 @@ namespace SQLitekurs
             Connect(@"C:\BD\RealtorEstateAgancy.sqlite");
             connection.Open();
             command = new SQLiteCommand("insert into Customer(fio, email, telephoneNumber) values ("
-                + "'" + customer.fio + "'," +
-                 "'" + customer.email + "'," +
+                + "'" + customer.fio + "', " +
+                 "'" + customer.email + "', " +
                   "'" + customer.telephoneNumber + "');", connection);
+            command.ExecuteNonQuery();
+            connection.Close();
+        }
+        public void AddRequest(Request request)
+        {
+            Connect(@"C:\BD\RealtorEstateAgancy.sqlite");
+            connection.Open();
+            //(int id, int customerId, string date, string dealType, string estateObject, string material, string lPrice,
+            //string uPrice, string locality, double lArea, double uArea, int roomNumber, int floor, int maxFloor, string suggestion, string status)
+            command = new SQLiteCommand("insert into Request(customerId, date, dealType, estateObject, material, lpice, uPrice, locality, lArea, uAea, roomNumber, floor, maxFloor, suggestion, status) values (" +
+                "'" + request.customerId + "', " +
+                "'" + request.date + "', " +
+                "'" + request.dealType + "', " +
+                "'" + request.estateObjectType + "', " +
+                "'" + request.material + "', " +
+                "'" + request.lPrice + "', " +
+                "'" + request.uPrice + "', " +
+                "'" + request.locality + "', " +
+                "'" + request.lArea + "', " +
+                "'" + request.uArea + "', " +
+                "'" + request.roomNumber + "', " +
+                "'" + request.floor + "', " +
+                "'" + request.maxFloor + "', " +
+                "'" + request.suggestion + "', " +
+                "'" + request.status  +"');", connection);
+            command.ExecuteNonQuery();
+            connection.Close();
+        }
+        public void AddRealtor(Realtor realtor)
+        {
+            Connect(@"C:\BD\RealtorEstateAgancy.sqlite");
+            connection.Open();
+            command = new SQLiteCommand("insert into Realtor(fio, login, password, telephoneNumber) values ("
+                + "'" + realtor.fio + "', " +
+                "'" + realtor.login + "', " +
+                 "'" + realtor.password + "', " +
+                  "'" + realtor.telephoneNumber + "');", connection);
             command.ExecuteNonQuery();
             connection.Close();
         }
