@@ -30,6 +30,7 @@ namespace RealtorEstateAgancy
                 SQLitekurs.SQLite db = new SQLitekurs.SQLite();
                 db.AddCustomer(customer);
                 Close();
+                
              }
         }
 

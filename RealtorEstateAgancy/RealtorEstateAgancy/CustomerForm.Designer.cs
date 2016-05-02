@@ -33,9 +33,9 @@
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.dgvEstateObjects = new System.Windows.Forms.DataGridView();
+            this.dgvCustomer = new System.Windows.Forms.DataGridView();
             this.btnAddRequest = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEstateObjects)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             this.SuspendLayout();
             // 
             // btnUpdate
@@ -85,16 +85,17 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // dgvEstateObjects
+            // dgvCustomer
             // 
-            this.dgvEstateObjects.AllowUserToAddRows = false;
-            this.dgvEstateObjects.AllowUserToDeleteRows = false;
-            this.dgvEstateObjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEstateObjects.Location = new System.Drawing.Point(12, 39);
-            this.dgvEstateObjects.Name = "dgvEstateObjects";
-            this.dgvEstateObjects.ReadOnly = true;
-            this.dgvEstateObjects.Size = new System.Drawing.Size(898, 464);
-            this.dgvEstateObjects.TabIndex = 13;
+            this.dgvCustomer.AllowUserToAddRows = false;
+            this.dgvCustomer.AllowUserToDeleteRows = false;
+            this.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCustomer.Location = new System.Drawing.Point(12, 39);
+            this.dgvCustomer.Name = "dgvCustomer";
+            this.dgvCustomer.ReadOnly = true;
+            this.dgvCustomer.Size = new System.Drawing.Size(898, 464);
+            this.dgvCustomer.TabIndex = 13;
+            this.dgvCustomer.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCustomer_RowHeaderMouseDoubleClick);
             // 
             // btnAddRequest
             // 
@@ -117,11 +118,12 @@
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.dgvEstateObjects);
+            this.Controls.Add(this.dgvCustomer);
             this.Name = "CustomerForm";
             this.Text = "CustomerForm";
+            this.Activated += new System.EventHandler(this.CustomerForm_Activated);
             this.Load += new System.EventHandler(this.CustomerForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEstateObjects)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,7 +136,7 @@
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.DataGridView dgvEstateObjects;
+        private System.Windows.Forms.DataGridView dgvCustomer;
         private System.Windows.Forms.Button btnAddRequest;
     }
 }

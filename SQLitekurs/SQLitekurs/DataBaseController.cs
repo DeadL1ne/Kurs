@@ -37,8 +37,8 @@ namespace SQLitekurs
                " address text, area text, roomNumber text, floor text, maxFloor text,  material text, seller text, description text);", connection);
             command.ExecuteNonQuery();
             command = new SQLiteCommand("create table Request(id integer primary key autoincrement, customerID references Customer(id)," +
-                " date text, dealType text, estateObjectType text, material text, lPrice text, uPrice text, locality text, lArea real, uArea real" +
-                " roomNumber integer, floor integer, maxFloor integer, suggestion text, status text);", connection);
+                " date text, dealType text, estateObjectType text, material text, lPrice text, uPrice text, locality text, lArea real, uArea real," +
+                " roomNumber int, floor integer, maxFloor integer, suggestion text, status text);", connection);
             command.ExecuteNonQuery();
             command = new SQLiteCommand("create table Agreement(id integer primary key autoincrement, date text, estateObjectId references estateObject(id)," +
                 " realtorId references Realtor(id), requestId references Request(id));", connection);
@@ -181,7 +181,7 @@ namespace SQLitekurs
         {
             connection.Open();
             command = new SQLiteCommand(connection);
-            command.CommandText = @"SELECT fio, email, telephoneNumber FROM Customer;";
+            command.CommandText = @"SELECT id, fio, email, telephoneNumber FROM Customer;";
             SQLiteDataReader allDataReader = command.ExecuteReader();
             DataTable allData = new DataTable();
             allData.Load(allDataReader);
@@ -197,7 +197,7 @@ namespace SQLitekurs
         {
             connection.Open();
             command = new SQLiteCommand(connection);
-            command.CommandText = @"SELECT id, customerId, date, dealType, estateObject, material, lpice, uPrice, locality, lArea, uAea, roomNumber, floor, maxFloor, suggestion, status FROM Customer;";
+            command.CommandText = @"SELECT id, customerID, date, dealType, estateObjectType, material, lPrice , uPrice, locality, lArea, uArea, roomNumber, floor, maxFloor, suggestion, status FROM Request;";
             SQLiteDataReader allDataReader = command.ExecuteReader();
             DataTable allData = new DataTable();
             allData.Load(allDataReader);
@@ -245,7 +245,7 @@ namespace SQLitekurs
             connection.Open();
             //(int id, int customerId, string date, string dealType, string estateObject, string material, string lPrice,
             //string uPrice, string locality, double lArea, double uArea, int roomNumber, int floor, int maxFloor, string suggestion, string status)
-            command = new SQLiteCommand("insert into Request(customerId, date, dealType, estateObject, material, lpice, uPrice, locality, lArea, uAea, roomNumber, floor, maxFloor, suggestion, status) values (" +
+            command = new SQLiteCommand("insert into Request(customerID, date, dealType, estateObjectType, material, lPrice , uPrice, locality, lArea, uArea, roomNumber, floor, maxFloor, suggestion, status) values (" +
                 "'" + request.customerId + "', " +
                 "'" + request.date + "', " +
                 "'" + request.dealType + "', " +

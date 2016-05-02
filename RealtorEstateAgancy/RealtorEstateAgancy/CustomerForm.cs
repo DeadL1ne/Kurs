@@ -20,6 +20,11 @@ namespace RealtorEstateAgancy
             InitializeComponent();
 
         }
+        public void UpdateDataForm()
+        {
+            UpdateDataGrid();
+        }
+
         SQLitekurs.SQLite db = new SQLitekurs.SQLite();
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -30,11 +35,13 @@ namespace RealtorEstateAgancy
         {
             AddCustomer addCustomerForm = new AddCustomer();
             addCustomerForm.Show();
+            UpdateDataGrid();
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-
+            db.RemoveCustomer(Convert.ToInt32(dgvCustomer.CurrentRow.Cells[0].Value));
+            UpdateDataGrid();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -44,7 +51,8 @@ namespace RealtorEstateAgancy
 
         private void btnAddRequest_Click(object sender, EventArgs e)
         {
-
+            AddRequest addRequest = new AddRequest(Convert.ToInt32(dgvCustomer.CurrentRow.Cells[0].Value));
+            addRequest.Show();
         }
 
         private void CustomerForm_Load(object sender, EventArgs e)
@@ -70,7 +78,19 @@ namespace RealtorEstateAgancy
         }
         private void UpdateDataGrid()
         {
-            dgvEstateObjects.DataSource = db.DisplayAllDataCustomer();
+            dgvCustomer.DataSource = db.DisplayAllDataCustomer();
+        }
+
+
+        private void dgvCustomer_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+             AddRequest addRequest = new AddRequest(Convert.ToUInt32(dgvCustomer.CurrentRow.Cells[0].Value));
+            addRequest.Show();
+        }
+
+        private void CustomerForm_Activated(object sender, EventArgs e)
+        {
+            UpdateDataGrid();
         }
     }
 }

@@ -84,3 +84,4 @@ C:\Users\vl\Source\Repos\Kurs\RealtorEstateAgancy\RealtorEstateAgancy\obj\Debug\
 C:\Users\vl\Source\Repos\Kurs\RealtorEstateAgancy\RealtorEstateAgancy\obj\Debug\RealtorEstateAgancy.Requests.resources
 C:\Users\vl\Source\Repos\Kurs\RealtorEstateAgancy\RealtorEstateAgancy\obj\Debug\RealtorEstateAgancy.AddCustomer.resources
 C:\Users\vl\Source\Repos\Kurs\RealtorEstateAgancy\RealtorEstateAgancy\obj\Debug\RealtorEstateAgancy.CustomerForm.resources
+C:\Users\vl\Source\Repos\Kurs\RealtorEstateAgancy\RealtorEstateAgancy\obj\Debug\RealtorEstateAgancy.AddRequest.resources

@@ -142,6 +142,9 @@
     <EmbeddedResource Include="AddEstateObjectForm.resx">
       <DependentUpon>AddEstateObjectForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddRequest.resx">
+      <DependentUpon>AddRequest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomerForm.resx">
       <DependentUpon>CustomerForm.cs</DependentUpon>
     </EmbeddedResource>
