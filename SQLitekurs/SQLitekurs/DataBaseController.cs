@@ -54,28 +54,28 @@ namespace SQLitekurs
             WebParser parser = new WebParser();
             //try
             //{
-                for (int page = 0; page < parser.GetCountPages(); page++)
+            for (int page = 0; page < parser.GetCountPages(); page++)
+            {
+                for (int estateObject = 0; estateObject < 50; estateObject++)
                 {
-                        for (int estateObject = 0; estateObject < 50; estateObject++)
-                        {
-                            string avitoId = parser.GetEstateObjectId(estateObject + 1, 1);
-                            string sourcePage = parser.GetSourcePage(avitoId);
-                            command = new SQLiteCommand("insert into EstateObject (avitoId, dealType, price, locality, address, area, roomNumber, " +
-                                "floor, maxFloor, material, seller, description) values ('" + avitoId + "', " +
-                                "'" + parser.GetDealType(sourcePage) + "', " +
-                                "'" + parser.GetPrice(sourcePage) + "', " +
-                                "'" + parser.GetLocality(sourcePage) + "', " +
-                                "'" + parser.GetAddress(sourcePage) + "', " +
-                                "'" + parser.GetArea(sourcePage) + "', " +
-                                "'" + parser.GetRoomNumber(sourcePage) + "', " +
-                                "'" + parser.GetFloor(sourcePage) + "', " +
-                                "'" + parser.GetMaxFloor(sourcePage) + "', " +
-                                "'" + parser.GetMaterial(sourcePage) + "', " +
-                                "'" + parser.GetSellerName(sourcePage) + "', " +
-                                "'" + parser.GetDescription(sourcePage) + "');", connection);
-                            command.ExecuteNonQuery();
-                        }
+                    string avitoId = parser.GetEstateObjectId(estateObject + 1, 1);
+                    string sourcePage = parser.GetSourcePage(avitoId);
+                    command = new SQLiteCommand("insert into EstateObject (avitoId, dealType, price, locality, address, area, roomNumber, " +
+                        "floor, maxFloor, material, seller, description) values ('" + avitoId + "', " +
+                        "'" + parser.GetDealType(sourcePage) + "', " +
+                        "'" + parser.GetPrice(sourcePage) + "', " +
+                        "'" + parser.GetLocality(sourcePage) + "', " +
+                        "'" + parser.GetAddress(sourcePage) + "', " +
+                        "'" + parser.GetArea(sourcePage) + "', " +
+                        "'" + parser.GetRoomNumber(sourcePage) + "', " +
+                        "'" + parser.GetFloor(sourcePage) + "', " +
+                        "'" + parser.GetMaxFloor(sourcePage) + "', " +
+                        "'" + parser.GetMaterial(sourcePage) + "', " +
+                        "'" + parser.GetSellerName(sourcePage) + "', " +
+                        "'" + parser.GetDescription(sourcePage) + "');", connection);
+                    command.ExecuteNonQuery();
                 }
+            }
             connection.Close();
             //}
             //catch (IndexOutOfRangeException)
@@ -205,6 +205,7 @@ namespace SQLitekurs
             connection.Close();
             return allData;
         }
+
         /// <summary>
         /// Method for adding user's estate object in database.
         /// </summary>
@@ -260,7 +261,7 @@ namespace SQLitekurs
                 "'" + request.floor + "', " +
                 "'" + request.maxFloor + "', " +
                 "'" + request.suggestion + "', " +
-                "'" + request.status  +"');", connection);
+                "'" + request.status + "');", connection);
             command.ExecuteNonQuery();
             connection.Close();
         }
@@ -275,6 +276,82 @@ namespace SQLitekurs
                   "'" + realtor.telephoneNumber + "');", connection);
             command.ExecuteNonQuery();
             connection.Close();
+        }
+
+        public List<EstateObject> GetListEstate()
+        {
+            Connect(@"C:\BD\RealtorEstateAgancy.sqlite");
+            connection.Open();
+            command = new SQLiteCommand(connection);
+            command.CommandText = @"SELECT id, dealType, locality, address, area, roomNumber, floor, maxFloor, material, price, description FROM EstateObject;";
+            SQLiteDataReader allDataReader = command.ExecuteReader();
+            DataTable allData = new DataTable();
+            allData.Load(allDataReader);
+            allDataReader.Close();
+            connection.Close();
+            List<EstateObject> lstObj = new List<EstateObject>();
+            for (int i = 0; i < allData.Rows.Count; i++)
+            {
+                EstateObject tempEstObj = new EstateObject();
+                try
+                {
+
+                    tempEstObj.id = Convert.ToInt32(allData.Rows[i].ItemArray[0]);
+                    tempEstObj.dealType = Convert.ToString(allData.Rows[i].ItemArray[1]);
+                    tempEstObj.locality = Convert.ToString(allData.Rows[i].ItemArray[2]);
+                    tempEstObj.address = Convert.ToString(allData.Rows[i].ItemArray[3]);
+                    tempEstObj.area = Convert.ToString(allData.Rows[i].ItemArray[4]);
+                    tempEstObj.roomNumber = Convert.ToString(allData.Rows[i].ItemArray[5]);
+                    tempEstObj.floor = Convert.ToString(allData.Rows[i].ItemArray[6]);
+                    tempEstObj.maxFloor = Convert.ToString(allData.Rows[i].ItemArray[7]);
+                    tempEstObj.material = Convert.ToString(allData.Rows[i].ItemArray[8]);
+                    tempEstObj.price = Convert.ToString(allData.Rows[i].ItemArray[9]);
+                    tempEstObj.description = Convert.ToString(allData.Rows[i].ItemArray[10]);
+                }
+                catch
+                {
+
+                }
+                lstObj.Add(tempEstObj);
+
+            }
+            return lstObj;
+        }
+
+
+        /// <summary>
+        /// Method returns an Request Objectn for the given id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Request GetRequestOfId(int id)
+        {
+            connection.Open();
+            command = new SQLiteCommand(connection);
+            command.CommandText = @"SELECT id, customerID, date, dealType, estateObjectType, material, lPrice , uPrice, locality, lArea, uArea, roomNumber, floor, maxFloor, suggestion, status FROM Request WHERE id = " + id + " ;";
+            SQLiteDataReader allDataReader = command.ExecuteReader();
+            DataTable allData = new DataTable();
+            allData.Load(allDataReader);
+            Request request = new Request();
+            request.id = id;
+            request.customerId = Convert.ToInt32(allData.Rows[0].ItemArray[1]);
+            request.date = Convert.ToString(allData.Rows[0].ItemArray[2]);
+            request.dealType = Convert.ToString(allData.Rows[0].ItemArray[3]);
+            request.estateObjectType = Convert.ToString(allData.Rows[0].ItemArray[4]);
+            request.material = Convert.ToString(allData.Rows[0].ItemArray[5]);
+            request.lPrice = Convert.ToString(allData.Rows[0].ItemArray[6]);
+            request.uPrice = Convert.ToString(allData.Rows[0].ItemArray[7]);
+            request.locality = Convert.ToString(allData.Rows[0].ItemArray[8]);
+            request.lArea = Convert.ToDouble(allData.Rows[0].ItemArray[9]);
+            request.uArea = Convert.ToDouble(allData.Rows[0].ItemArray[10]);
+            request.roomNumber = Convert.ToInt32(allData.Rows[0].ItemArray[11]);
+            request.floor = Convert.ToInt32(allData.Rows[0].ItemArray[12]);
+            request.maxFloor = Convert.ToInt32(allData.Rows[0].ItemArray[13]);
+            request.suggestion = Convert.ToString(allData.Rows[0].ItemArray[14]);
+            request.status = Convert.ToString(allData.Rows[0].ItemArray[15]);
+            allDataReader.Close();
+            connection.Close();
+            return request;
         }
         //Павел, я не знаю что это, но мне нужно было собрать проект, поэтому я закомментировал
         //public string GetDealType()

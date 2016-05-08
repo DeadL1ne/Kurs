@@ -28,3 +28,4 @@ C:\Users\vl\Source\Repos\Kurs\SQLitekurs\SQLitekurs\bin\Debug\EntityKurs.dll
 C:\Users\vl\Source\Repos\Kurs\SQLitekurs\SQLitekurs\bin\Debug\xNet.dll
 C:\Users\vl\Source\Repos\Kurs\SQLitekurs\SQLitekurs\bin\Debug\ClassLibrary1.pdb
 C:\Users\vl\Source\Repos\Kurs\SQLitekurs\SQLitekurs\bin\Debug\EntityKurs.pdb
+C:\Users\vl\Source\Repos\Kurs\SQLitekurs\SQLitekurs\obj\Debug\SQLitekurs.csprojResolveAssemblyReference.cache
