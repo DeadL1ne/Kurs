@@ -53,6 +53,9 @@
     <Reference Include="EntityKurs">
       <HintPath>..\..\Entity\EntityKurs\bin\Debug\EntityKurs.dll</HintPath>
     </Reference>
+    <Reference Include="HelpRequest">
+      <HintPath>..\..\..\..\..\YandexDisk\ChislMet\HelpRequest\HelpRequest\bin\Debug\HelpRequest.dll</HintPath>
+    </Reference>
     <Reference Include="SQLitekurs, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SQLitekurs\SQLitekurs\bin\Debug\SQLitekurs.dll</HintPath>
@@ -137,6 +140,12 @@
     <Compile Include="Requests.Designer.cs">
       <DependentUpon>Requests.cs</DependentUpon>
     </Compile>
+    <Compile Include="ShowPhotoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowPhotoForm.Designer.cs">
+      <DependentUpon>ShowPhotoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SQLite.cs" />
     <Compile Include="SQLiteAsync.cs" />
     <EmbeddedResource Include="AddCustomer.resx">
@@ -171,6 +180,9 @@
     </Compile>
     <EmbeddedResource Include="Requests.resx">
       <DependentUpon>Requests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowPhotoForm.resx">
+      <DependentUpon>ShowPhotoForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

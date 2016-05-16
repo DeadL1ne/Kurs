@@ -4,3 +4,8 @@ c:\users\user\documents\visual studio 2015\Projects\WebParser\ClassLibrary1\bin\
 c:\users\user\documents\visual studio 2015\Projects\WebParser\ClassLibrary1\obj\Debug\ClassLibrary1.dll
 c:\users\user\documents\visual studio 2015\Projects\WebParser\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
 C:\Users\User\Documents\Visual Studio 2015\Projects\WebParser\ClassLibrary1\obj\Debug\ParserAvito.csprojResolveAssemblyReference.cache
+C:\Users\vl\Source\Repos\Kurs\WebParser\ClassLibrary1\bin\Debug\ClassLibrary1.dll
+C:\Users\vl\Source\Repos\Kurs\WebParser\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
+C:\Users\vl\Source\Repos\Kurs\WebParser\ClassLibrary1\obj\Debug\ParserAvito.csprojResolveAssemblyReference.cache
+C:\Users\vl\Source\Repos\Kurs\WebParser\ClassLibrary1\obj\Debug\ClassLibrary1.dll
+C:\Users\vl\Source\Repos\Kurs\WebParser\ClassLibrary1\obj\Debug\ClassLibrary1.pdb

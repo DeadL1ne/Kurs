@@ -108,6 +108,23 @@ namespace SQLitekurs
             connection.Close();
         }
         /// <summary>
+        /// Method searches estateObjects which satisfy given address
+        /// </summary>
+        /// <param name="address">address to which the search is carried out</param>
+        /// <returns>Table with all suitable addresses</returns>
+        public DataTable SearchByAddress(string address)
+        {
+            connection.Open();
+            command = new SQLiteCommand("SELECT id, dealType, locality, address, roomNumber, price FROM EstateObject where address LIKE '" + address +
+                "%';", connection);
+            SQLiteDataReader searchReader = command.ExecuteReader();
+            DataTable searchDataTable = new DataTable();
+            searchDataTable.Load(searchReader);
+            searchReader.Close();
+            connection.Close();
+            return searchDataTable;
+        }
+        /// <summary>
         /// Method removes record in database.
         /// </summary>
         /// <param name="id">id for removing</param>
@@ -140,23 +157,7 @@ namespace SQLitekurs
             command.ExecuteNonQuery();
             connection.Close();
         }
-        /// <summary>
-        /// Method searches estateObjects which satisfy given address
-        /// </summary>
-        /// <param name="address">address to which the search is carried out</param>
-        /// <returns>Table with all suitable addresses</returns>
-        public DataTable SearchByAddress(string address)
-        {
-            connection.Open();
-            command = new SQLiteCommand("SELECT id, dealType, locality, address, roomNumber, price FROM EstateObject where address LIKE '" + address +
-                "%';", connection);
-            SQLiteDataReader searchReader = command.ExecuteReader();
-            DataTable searchDataTable = new DataTable();
-            searchDataTable.Load(searchReader);
-            searchReader.Close();
-            connection.Close();
-            return searchDataTable;
-        }
+
         /// <summary>
         /// Method write all data in DataTable
         /// </summary>
@@ -342,8 +343,10 @@ namespace SQLitekurs
             request.lPrice = Convert.ToString(allData.Rows[0].ItemArray[6]);
             request.uPrice = Convert.ToString(allData.Rows[0].ItemArray[7]);
             request.locality = Convert.ToString(allData.Rows[0].ItemArray[8]);
-            request.lArea = Convert.ToDouble(allData.Rows[0].ItemArray[9]);
-            request.uArea = Convert.ToDouble(allData.Rows[0].ItemArray[10]);
+////////////////////// ////Double -> string////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            request.lArea = Convert.ToString(allData.Rows[0].ItemArray[9]);
+            request.uArea = Convert.ToString(allData.Rows[0].ItemArray[10]);
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             request.roomNumber = Convert.ToInt32(allData.Rows[0].ItemArray[11]);
             request.floor = Convert.ToInt32(allData.Rows[0].ItemArray[12]);
             request.maxFloor = Convert.ToInt32(allData.Rows[0].ItemArray[13]);
@@ -353,16 +356,55 @@ namespace SQLitekurs
             connection.Close();
             return request;
         }
-        //Павел, я не знаю что это, но мне нужно было собрать проект, поэтому я закомментировал
-        //public string GetDealType()
-        //{
-        //    string dealType;
-        //    Connect(@"C:\BD\RealtorEstateAgancy.sqlite");
-        //    connection.Open();
-        //    command = new SQLiteCommand("select (dealType) from EstateObject")
 
-        //}
-        public void Change()
-        { }
+        /// <summary>
+        /// Method for  getting estate obj from database
+        /// </summary>
+        /// <param name="objId">Object id in database</param>
+        /// <returns>EstateObject with all filled fields</returns>
+        public EstateObject GetEstateObject(int objId)
+        {
+            EstateObject estate = new EstateObject();
+            Connect(@"C:\BD\RealtorEstateAgancy.sqlite");
+            connection.Open();
+            command = new SQLiteCommand("select dealType, locality, address, area, roomNumber, floor, maxFloor," +
+                "material, price, description, avitoId from EstateObject where id = " + objId + ";", connection);
+            SQLiteDataReader dealTypeReader = command.ExecuteReader();
+            while (dealTypeReader.Read())
+            {
+                estate.dealType = dealTypeReader.GetString(0);
+                estate.locality = dealTypeReader.GetString(1);
+                estate.address = dealTypeReader.GetString(2);
+                estate.area = dealTypeReader.GetString(3);
+                estate.roomNumber = dealTypeReader.GetString(4);
+                estate.floor = dealTypeReader.GetString(5);
+                estate.maxFloor = dealTypeReader.GetString(6);
+                estate.material = dealTypeReader.GetString(7);
+                estate.price = dealTypeReader.GetString(8);
+                estate.description = dealTypeReader.GetString(9);
+                estate.avitoId = dealTypeReader.GetString(10);
+            }
+            dealTypeReader.Close();
+            connection.Close();
+            return estate;
+        }
+        public void Edit(EstateObject estate, int objId)
+        {
+            connection.Open();
+            command = new SQLiteCommand(connection);
+            command.CommandText = @"UPDATE EstateObject SET " +
+                 "dealType = '" + estate.dealType + "'," +
+                 "locality = '" + estate.locality + "'," +
+                 "address = '" + estate.address + "'," +
+                 "area = '" + estate.area + "'," +
+                 "roomNumber = '" + estate.roomNumber + "'," +
+                 "floor = '" + estate.floor + "'," +
+                 "maxFloor = '" + estate.maxFloor + "'," +
+                 "material = '" + estate.material + "'," +
+                 "price = '" + estate.price + "'," +
+                 "description = '" + estate.description + "' " + "where id =" + objId;
+            command.ExecuteNonQuery();
+            connection.Close();
+        }
     }
 }

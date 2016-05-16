@@ -5,6 +5,5 @@ c:\users\user\documents\visual studio 2015\Projects\Entity\EntityKurs\obj\Debug\
 c:\users\user\documents\visual studio 2015\Projects\Entity\EntityKurs\obj\Debug\EntityKurs.pdb
 C:\Users\vl\Source\Repos\Kurs\Entity\EntityKurs\bin\Debug\EntityKurs.dll
 C:\Users\vl\Source\Repos\Kurs\Entity\EntityKurs\bin\Debug\EntityKurs.pdb
-C:\Users\vl\Source\Repos\Kurs\Entity\EntityKurs\obj\Debug\EntityKurs.csprojResolveAssemblyReference.cache
 C:\Users\vl\Source\Repos\Kurs\Entity\EntityKurs\obj\Debug\EntityKurs.dll
 C:\Users\vl\Source\Repos\Kurs\Entity\EntityKurs\obj\Debug\EntityKurs.pdb

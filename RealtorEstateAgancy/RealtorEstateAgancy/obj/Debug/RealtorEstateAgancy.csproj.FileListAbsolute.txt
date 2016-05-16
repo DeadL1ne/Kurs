@@ -89,3 +89,6 @@ C:\Users\vl\Source\Repos\Kurs\RealtorEstateAgancy\RealtorEstateAgancy\bin\Debug\
 C:\Users\vl\Source\Repos\Kurs\RealtorEstateAgancy\RealtorEstateAgancy\bin\Debug\itextsharp.dll
 C:\Users\vl\Source\Repos\Kurs\RealtorEstateAgancy\RealtorEstateAgancy\bin\Debug\Email.pdb
 C:\Users\vl\Source\Repos\Kurs\RealtorEstateAgancy\RealtorEstateAgancy\bin\Debug\itextsharp.xml
+C:\Users\vl\Source\Repos\Kurs\RealtorEstateAgancy\RealtorEstateAgancy\obj\Debug\RealtorEstateAgancy.ShowPhotoForm.resources
+C:\Users\vl\Source\Repos\Kurs\RealtorEstateAgancy\RealtorEstateAgancy\bin\Debug\HelpRequest.dll
+C:\Users\vl\Source\Repos\Kurs\RealtorEstateAgancy\RealtorEstateAgancy\bin\Debug\HelpRequest.pdb

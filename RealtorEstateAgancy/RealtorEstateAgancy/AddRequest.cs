@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using EntityKurs;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using HelpRequests;
 
 namespace RealtorEstateAgancy
 {
@@ -44,8 +45,8 @@ namespace RealtorEstateAgancy
                 request.date = dateRequest.Text;
                 request.dealType = dealTypeComboBox.Text;
                 request.locality = localityComboBox.Text;
-                request.lArea = Convert.ToDouble(lAreaTextBox.Text);
-                request.uArea = Convert.ToDouble(uAreaTextBox.Text);
+                request.lArea = lAreaTextBox.Text;
+                request.uArea = uAreaTextBox.Text;
                 request.lPrice = lPriceTextBox.Text;
                 request.uPrice = uPriceTextBox.Text;
                 request.roomNumber = Convert.ToInt32(roomNumberTextBox.Text);
@@ -57,6 +58,12 @@ namespace RealtorEstateAgancy
                 request.estateObjectType = estateObjectTypeComboBox.Text;
                 SQLitekurs.SQLite db = new SQLitekurs.SQLite();
                 db.AddRequest(request);
+                //////////////////////////////////////////////////////////////////////////////////////
+                if (HelpRequestTextBox.Text != "")
+                {
+                    hr.Connect(path);
+                    hr.UpdateRequestFrame(hr.ConvertRequestToFrame(request, HelpRequestTextBox.Text));
+                }
                 Close();
 
             }
@@ -68,12 +75,65 @@ namespace RealtorEstateAgancy
 
         private void cancelBtn_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void dateRequest_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////
+        HelpRequest hr = new HelpRequest();
+        
+        
+        string path = @"C:\BD\FRAMEVL.sqlite";
+        
+         
+        
+        
+
+        
+            
+            /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void HelpRequestTextBox_TextChanged(object sender, EventArgs e)
+        {
+            hr.Connect(path);
+            Request tmpr = new Request();
+            try
+            {
+               hr.Create();
+            }
+            catch { }
+
+            tmpr = hr.GetRequestOfFrame(HelpRequestTextBox.Text);
+            if (tmpr != null)
+            {
+                uAreaTextBox.Text = tmpr.uArea;
+                lAreaTextBox.Text = tmpr.lArea;
+                lPriceTextBox.Text = tmpr.lPrice;
+                uPriceTextBox.Text = tmpr.uPrice;
+                materialcomboBox.Text = hr.fillterString(tmpr.material);
+                floorTextBox.Text = Convert.ToString(tmpr.floor);
+                maxFloorTextBox.Text = Convert.ToString(tmpr.maxFloor);
+                roomNumberTextBox.Text = Convert.ToString(tmpr.roomNumber);
+                localityComboBox.Text = hr.fillterString(tmpr.locality);
+                dealTypeComboBox.Text = hr.fillterString(tmpr.dealType);
+                estateObjectTypeComboBox.Text = hr.fillterString(tmpr.estateObjectType);
+
+            }
         }
     }
 }

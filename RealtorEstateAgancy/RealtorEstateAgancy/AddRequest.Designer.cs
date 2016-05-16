@@ -56,6 +56,8 @@
             this.cancelBtn = new System.Windows.Forms.Button();
             this.roomNumberTextBox = new System.Windows.Forms.TextBox();
             this.roomNumberLabel = new System.Windows.Forms.Label();
+            this.HelpRequestTextBox = new System.Windows.Forms.TextBox();
+            this.MissionLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lPriceLabel
@@ -93,7 +95,13 @@
             // 
             // dealTypeComboBox
             // 
+            this.dealTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dealTypeComboBox.FormattingEnabled = true;
+            this.dealTypeComboBox.Items.AddRange(new object[] {
+            "Покупка",
+            "Продажа",
+            "Сдать_в_аренду",
+            "Взять_в_аренду"});
             this.dealTypeComboBox.Location = new System.Drawing.Point(101, 84);
             this.dealTypeComboBox.Name = "dealTypeComboBox";
             this.dealTypeComboBox.Size = new System.Drawing.Size(121, 21);
@@ -119,7 +127,14 @@
             // 
             // localityComboBox
             // 
+            this.localityComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.localityComboBox.FormattingEnabled = true;
+            this.localityComboBox.Items.AddRange(new object[] {
+            "Железнодорожный_район",
+            "Заволжский_район",
+            "Засвияжский_район",
+            "Ленинский_район",
+            "Новый_город"});
             this.localityComboBox.Location = new System.Drawing.Point(300, 87);
             this.localityComboBox.Name = "localityComboBox";
             this.localityComboBox.Size = new System.Drawing.Size(148, 21);
@@ -162,8 +177,9 @@
             // 
             this.dateRequest.Location = new System.Drawing.Point(101, 12);
             this.dateRequest.Name = "dateRequest";
-            this.dateRequest.Size = new System.Drawing.Size(200, 20);
+            this.dateRequest.Size = new System.Drawing.Size(121, 20);
             this.dateRequest.TabIndex = 12;
+            this.dateRequest.ValueChanged += new System.EventHandler(this.dateRequest_ValueChanged);
             // 
             // TimeLabel
             // 
@@ -185,7 +201,15 @@
             // 
             // estateObjectTypeComboBox
             // 
+            this.estateObjectTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.estateObjectTypeComboBox.FormattingEnabled = true;
+            this.estateObjectTypeComboBox.Items.AddRange(new object[] {
+            "Дом",
+            "Дача",
+            "Квартира",
+            "Склад",
+            "Производственное_помещение",
+            "Земельный_участок"});
             this.estateObjectTypeComboBox.Location = new System.Drawing.Point(101, 48);
             this.estateObjectTypeComboBox.Name = "estateObjectTypeComboBox";
             this.estateObjectTypeComboBox.Size = new System.Drawing.Size(121, 21);
@@ -225,7 +249,12 @@
             // 
             // materialcomboBox
             // 
+            this.materialcomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.materialcomboBox.FormattingEnabled = true;
+            this.materialcomboBox.Items.AddRange(new object[] {
+            "Кирпич",
+            "Панели",
+            "Дерево"});
             this.materialcomboBox.Location = new System.Drawing.Point(300, 48);
             this.materialcomboBox.Name = "materialcomboBox";
             this.materialcomboBox.Size = new System.Drawing.Size(148, 21);
@@ -294,11 +323,30 @@
             this.roomNumberLabel.TabIndex = 26;
             this.roomNumberLabel.Text = "Кол-во комнат";
             // 
+            // HelpRequestTextBox
+            // 
+            this.HelpRequestTextBox.Location = new System.Drawing.Point(300, 11);
+            this.HelpRequestTextBox.Name = "HelpRequestTextBox";
+            this.HelpRequestTextBox.Size = new System.Drawing.Size(148, 20);
+            this.HelpRequestTextBox.TabIndex = 28;
+            this.HelpRequestTextBox.TextChanged += new System.EventHandler(this.HelpRequestTextBox_TextChanged);
+            // 
+            // MissionLabel
+            // 
+            this.MissionLabel.AutoSize = true;
+            this.MissionLabel.Location = new System.Drawing.Point(228, 14);
+            this.MissionLabel.Name = "MissionLabel";
+            this.MissionLabel.Size = new System.Drawing.Size(72, 13);
+            this.MissionLabel.TabIndex = 29;
+            this.MissionLabel.Text = "Цель сделки";
+            // 
             // AddRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(515, 474);
+            this.Controls.Add(this.MissionLabel);
+            this.Controls.Add(this.HelpRequestTextBox);
             this.Controls.Add(this.roomNumberTextBox);
             this.Controls.Add(this.roomNumberLabel);
             this.Controls.Add(this.addBtn);
@@ -364,5 +412,7 @@
         private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.TextBox roomNumberTextBox;
         private System.Windows.Forms.Label roomNumberLabel;
+        private System.Windows.Forms.TextBox HelpRequestTextBox;
+        private System.Windows.Forms.Label MissionLabel;
     }
 }

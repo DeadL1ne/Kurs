@@ -20,8 +20,8 @@ namespace EntityKurs
         public string lPrice { get; set; }//the lower limit of the price
         public string uPrice { get; set; }// the upper limit of the price
         public string locality { get; set; }//a distinct of the city
-        public double lArea { get; set; }//the lower limit of the apartment area
-        public double uArea { get; set; }//the upper limit of the apartment area
+        public string lArea { get; set; }//the lower limit of the apartment area
+        public string uArea { get; set; }//the upper limit of the apartment area
         public int roomNumber { get; set; }//number of rooms in the apartment
         public int floor { get; set; }//floor on which the estate object is located
         public int maxFloor { get; set; }//maximum number of floors in the building
@@ -29,7 +29,7 @@ namespace EntityKurs
         public string status { get; set; }//current request status
 
         public Request(int id, int customerId, string date, string dealType, string estateObject, string material, string lPrice,
-            string uPrice, string locality, double lArea, double uArea, int roomNumber, int floor, int maxFloor, string suggestion, string status)
+            string uPrice, string locality, string lArea, string uArea, int roomNumber, int floor, int maxFloor, string suggestion, string status)
         {
             this.id = id;
             this.customerId = customerId;

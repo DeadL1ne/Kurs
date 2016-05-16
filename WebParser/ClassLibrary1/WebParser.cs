@@ -39,8 +39,38 @@ namespace ParserAvito
             string objId;
             using (var request = new HttpRequest())
             {
-                string sourcePage;
-                sourcePage = request.Get("https://www.avito.ru/ulyanovsk/kvartiry?p=" + pageNum).ToString();
+                string sourcePage = "";
+                try
+                {
+                    sourcePage = request.Get("https://www.avito.ru/ulyanovsk/kvartiry?p=" + pageNum).ToString();
+                }
+                catch (HttpException ex)
+                {
+                    Console.WriteLine("Произошла ошибка при работе с HTTP-сервером: {0}", ex.Message);
+
+                    switch (ex.Status)
+                    {
+                        case HttpExceptionStatus.Other:
+                            Console.WriteLine("Неизвестная ошибка");
+                            break;
+
+                        case HttpExceptionStatus.ProtocolError:
+                            Console.WriteLine("Код состояния: {0}", (int)ex.HttpStatusCode);
+                            break;
+
+                        case HttpExceptionStatus.ConnectFailure:
+                            Console.WriteLine("Не удалось соединиться с HTTP-сервером.");
+                            break;
+
+                        case HttpExceptionStatus.SendFailure:
+                            Console.WriteLine("Не удалось отправить запрос HTTP-серверу.");
+                            break;
+
+                        case HttpExceptionStatus.ReceiveFailure:
+                            Console.WriteLine("Не удалось загрузить ответ от HTTP-сервера.");
+                            break;
+                    }
+                }
                 objId = sourcePage.Substrings("<a class=\"item-description-title-link\" href=\"/ulyanovsk/kvartiry/", "\" title=", 0)[objectNumber];
             }
             return objId;
@@ -52,12 +82,56 @@ namespace ParserAvito
         /// <returns>Line with html page's text</returns>
         public string GetSourcePage(string estateObjectId)
         {
-            string sourcePage;
+            string sourcePage = "";
             using (var request = new HttpRequest())
             {
-                sourcePage = request.Get("https://www.avito.ru/ulyanovsk/kvartiry/" + estateObjectId).ToString();
+                try
+                {
+                    sourcePage = request.Get("https://www.avito.ru/ulyanovsk/kvartiry/" + estateObjectId).ToString();
+                }
+                catch (HttpException ex)
+                {
+                    Console.WriteLine("Произошла ошибка при работе с HTTP-сервером: {0}", ex.Message);
+
+                    switch (ex.Status)
+                    {
+                        case HttpExceptionStatus.Other:
+                            Console.WriteLine("Неизвестная ошибка");
+                            break;
+
+                        case HttpExceptionStatus.ProtocolError:
+                            Console.WriteLine("Код состояния: {0}", (int)ex.HttpStatusCode);
+                            break;
+
+                        case HttpExceptionStatus.ConnectFailure:
+                            Console.WriteLine("Не удалось соединиться с HTTP-сервером.");
+                            break;
+
+                        case HttpExceptionStatus.SendFailure:
+                            Console.WriteLine("Не удалось отправить запрос HTTP-серверу.");
+                            break;
+
+                        case HttpExceptionStatus.ReceiveFailure:
+                            Console.WriteLine("Не удалось загрузить ответ от HTTP-сервера.");
+                            break;
+                    }
+                }
             }
             return sourcePage;
+        }
+        public string GetPhotoLink(string sourcePage, int photoNum)
+        {
+            string photoLink;
+            try
+            {
+                photoLink = sourcePage.Substrings("<a class=\"gallery-link\" href=\"", "\" id=\"p", 0)[photoNum];
+            }
+            catch (IndexOutOfRangeException)
+            {
+                return null;
+            }
+            return photoLink;
+
         }
         /// <summary>
         /// Method for getting address of estate object
@@ -116,6 +190,21 @@ namespace ParserAvito
         {
             string dealType;
             dealType = sourcePage.Substrings("Тип объявления &mdash; ", "\"", 0)[0];
+            switch (dealType)
+            {
+                case "Продам":
+                    dealType = "Продажа";
+                    break;
+                case "Куплю":
+                    dealType = "Покупка";
+                    break;
+                case "Сниму":
+                    dealType = "Съём";
+                    break;
+                case "Сдам":
+                    dealType = "Сдача";
+                    break;
+            }
             return dealType;
         }
         /// <summary>
@@ -229,7 +318,7 @@ namespace ParserAvito
                 {
                     telephoneNumberRef = sourcePage.Substrings("<img class=\"description__phone-img\" src=", ">", 0)[0];
                 }
-                catch(IndexOutOfRangeException)
+                catch (IndexOutOfRangeException)
                 {
                     telephoneNumberRef = "Не указан";
                 }
@@ -250,7 +339,7 @@ namespace ParserAvito
             {
                 description = sourcePage.Substrings("<div id=\"desc_text\" itemprop=\"description\"><p>", "</p></div>", 0)[0];
             }
-            catch(IndexOutOfRangeException)
+            catch (IndexOutOfRangeException)
             {
                 description = "Отсутствует";
             }

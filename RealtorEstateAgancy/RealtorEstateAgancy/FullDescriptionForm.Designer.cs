@@ -37,7 +37,7 @@
             this.materialDescLabel = new System.Windows.Forms.Label();
             this.priceDescLabel = new System.Windows.Forms.Label();
             this.descriptionDescLabel = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.descriptionRTB = new System.Windows.Forms.RichTextBox();
             this.dealTypeLabel = new System.Windows.Forms.Label();
             this.localityLabel = new System.Windows.Forms.Label();
             this.addressLabel = new System.Windows.Forms.Label();
@@ -46,6 +46,7 @@
             this.floorLabel = new System.Windows.Forms.Label();
             this.materialLabel = new System.Windows.Forms.Label();
             this.priceLabel = new System.Windows.Forms.Label();
+            this.showPhotosbtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // dealTypeDescLabel
@@ -123,20 +124,20 @@
             // descriptionDescLabel
             // 
             this.descriptionDescLabel.AutoSize = true;
-            this.descriptionDescLabel.Location = new System.Drawing.Point(13, 255);
+            this.descriptionDescLabel.Location = new System.Drawing.Point(13, 265);
             this.descriptionDescLabel.Name = "descriptionDescLabel";
             this.descriptionDescLabel.Size = new System.Drawing.Size(60, 13);
             this.descriptionDescLabel.TabIndex = 8;
             this.descriptionDescLabel.Text = "Описание:";
             // 
-            // richTextBox1
+            // descriptionRTB
             // 
-            this.richTextBox1.Enabled = false;
-            this.richTextBox1.Location = new System.Drawing.Point(16, 284);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(256, 96);
-            this.richTextBox1.TabIndex = 9;
-            this.richTextBox1.Text = "";
+            this.descriptionRTB.Enabled = false;
+            this.descriptionRTB.Location = new System.Drawing.Point(16, 290);
+            this.descriptionRTB.Name = "descriptionRTB";
+            this.descriptionRTB.Size = new System.Drawing.Size(256, 96);
+            this.descriptionRTB.TabIndex = 9;
+            this.descriptionRTB.Text = "";
             // 
             // dealTypeLabel
             // 
@@ -218,11 +219,22 @@
             this.priceLabel.TabIndex = 18;
             this.priceLabel.Text = "null";
             // 
+            // showPhotosbtn
+            // 
+            this.showPhotosbtn.Location = new System.Drawing.Point(14, 240);
+            this.showPhotosbtn.Name = "showPhotosbtn";
+            this.showPhotosbtn.Size = new System.Drawing.Size(108, 23);
+            this.showPhotosbtn.TabIndex = 20;
+            this.showPhotosbtn.Text = "Посмотреть фото";
+            this.showPhotosbtn.UseVisualStyleBackColor = true;
+            this.showPhotosbtn.Click += new System.EventHandler(this.showPhotosbtn_Click);
+            // 
             // FullDescriptionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(296, 398);
+            this.Controls.Add(this.showPhotosbtn);
             this.Controls.Add(this.priceLabel);
             this.Controls.Add(this.materialLabel);
             this.Controls.Add(this.floorLabel);
@@ -231,7 +243,7 @@
             this.Controls.Add(this.addressLabel);
             this.Controls.Add(this.localityLabel);
             this.Controls.Add(this.dealTypeLabel);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.descriptionRTB);
             this.Controls.Add(this.descriptionDescLabel);
             this.Controls.Add(this.priceDescLabel);
             this.Controls.Add(this.materialDescLabel);
@@ -260,7 +272,7 @@
         private System.Windows.Forms.Label materialDescLabel;
         private System.Windows.Forms.Label priceDescLabel;
         private System.Windows.Forms.Label descriptionDescLabel;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox descriptionRTB;
         private System.Windows.Forms.Label dealTypeLabel;
         private System.Windows.Forms.Label localityLabel;
         private System.Windows.Forms.Label addressLabel;
@@ -269,5 +281,6 @@
         private System.Windows.Forms.Label floorLabel;
         private System.Windows.Forms.Label materialLabel;
         private System.Windows.Forms.Label priceLabel;
+        private System.Windows.Forms.Button showPhotosbtn;
     }
 }
